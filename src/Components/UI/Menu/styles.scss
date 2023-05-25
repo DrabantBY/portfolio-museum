@@ -1,0 +1,65 @@
+@import '../../../var';
+
+.menu-link {
+  display: block;
+  padding-block: 1rem;
+  font-weight: 100;
+  font-size: 2.2rem;
+  line-height: 2.6rem;
+  letter-spacing: 0.2rem;
+  text-transform: capitalize;
+  transition: color 0.2s linear;
+
+  @media (max-width: $tablet) {
+    font-size: 1.8rem;
+    line-height: 2.1rem;
+
+    @media (max-width: $mobile) {
+      font-size: 1.6rem;
+      line-height: 1.9rem;
+    }
+  }
+
+  &:hover {
+    color: var(--gold-hover);
+  }
+}
+
+.menu-burger {
+  display: none;
+
+  @media (max-width: $desktop) {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem 0;
+  }
+
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  width: 100%;
+  padding-block-start: 1.5rem;
+  padding-block-end: 2.5rem;
+  padding-inline-start: 5.5rem;
+  background-color: var(--bg-black);
+  transition: transform 0.2s linear;
+
+  &.active {
+    transform: translateY(-100%);
+  }
+
+  &-link {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 12.5rem;
+    padding-block: 1rem;
+    font-weight: 300;
+    font-size: 2rem;
+    line-height: 2.3rem;
+    letter-spacing: 0.2rem;
+    text-transform: capitalize;
+  }
+}

@@ -1,8 +1,9 @@
 import { ReactComponent as LogoIcon } from '../../../assets/svg/logo.svg';
+import './styles.scss';
 
 export const Logo = () => {
   return (
-    <a className='logo header__logo' href=''>
+    <a className='logo navigation__logo header__navigation-logo' href='#'>
       <LogoIcon />
       louvre
     </a>

@@ -1,0 +1,40 @@
+@import '../../var';
+
+.header {
+  position: sticky;
+  top: 0;
+  background-color: var(--bg-black);
+
+  &__navigation {
+    min-height: 12rem;
+
+    @media (max-width: $desktop) {
+      min-height: 10rem;
+
+      @media (max-width: $tablet) {
+        min-height: 8rem;
+
+        @media (max-width: $mobile) {
+          min-height: 6rem;
+        }
+      }
+    }
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    column-gap: 5rem;
+  }
+
+  &__menu {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    flex-wrap: wrap;
+    gap: 0 5.5rem;
+
+    @media (max-width: $desktop) {
+      display: none;
+    }
+  }
+}
