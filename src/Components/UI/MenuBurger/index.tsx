@@ -1,13 +1,11 @@
+import { useContext } from 'react';
+import { createPortal } from 'react-dom';
+import { MenuBurgerContext } from '../../../assets/context';
 import Menu from '../Menu';
-import MenuButton from '../MenuButton';
 
 const MenuBurger = () => {
-  return (
-    <>
-      <MenuButton />
-      <Menu isBurger={true} />
-    </>
-  );
+  const context = useContext(MenuBurgerContext);
+  return createPortal(<Menu isBurger={true} {...context} />, document.body);
 };
 
 export default MenuBurger;

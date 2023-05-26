@@ -3,23 +3,11 @@
 .header {
   position: sticky;
   top: 0;
+  z-index: 1;
   background-color: var(--bg-black);
 
   &__navigation {
-    min-height: 12rem;
-
-    @media (max-width: $desktop) {
-      min-height: 10rem;
-
-      @media (max-width: $tablet) {
-        min-height: 8rem;
-
-        @media (max-width: $mobile) {
-          min-height: 6rem;
-        }
-      }
-    }
-
+    min-height: var(--header-height);
     display: flex;
     align-items: center;
     justify-content: space-between;

@@ -20,6 +20,20 @@
   // --gray-hover: #989898;
   // --gray-active: #333333;
 
+  --header-height: 12rem;
+
+  @media (max-width: $desktop) {
+    --header-height: 10rem;
+
+    @media (max-width: $tablet) {
+      --header-height: 8rem;
+
+      @media (max-width: $mobile) {
+        --header-height: 6rem;
+      }
+    }
+  }
+
   // //? header link
   // --header-link-fs: 2.2rem;
   // --header-link-lh: 2.6rem;
