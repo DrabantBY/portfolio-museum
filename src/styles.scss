@@ -5,9 +5,10 @@
   font-size: 0.625em;
   box-sizing: border-box;
   user-select: none;
-  color: #ffffff;
+  color: var(--white);
 
   // //? color
+  --white: #ffffff;
   --bg-black: #030303;
   // --bg-red: #710707;
   // --bg-white: #dbdbdb;
