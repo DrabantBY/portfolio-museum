@@ -1,5 +1,7 @@
 import { memo } from 'react';
+import classnames from 'classnames';
 import { MENU } from '../../../constants';
+
 import { ReactComponent as ArrowLinkIcon } from '../../../assets/svg/arrow-link.svg';
 import { MenuPropsType } from '../../../types';
 import './styles.scss';
@@ -8,20 +10,31 @@ const Menu: React.FC<MenuPropsType> = memo(
   ({ isBurger, isActive, setIsActive }) => {
     const burger = isBurger ? 'menu-burger' : 'menu';
 
+    const classMenu = classnames(
+      burger,
+      `navigation__${burger}`,
+      `header__${burger}`,
+      { active: isActive }
+    );
+
+    const classItem = classnames(
+      `${burger}-item`,
+      `navigation__${burger}-item`,
+      `header__${burger}-item`
+    );
+
+    const classLink = classnames(
+      `${burger}-link`,
+      `navigation__${burger}-link`,
+      `header__${burger}-link`
+    );
+
     return (
-      <ul
-        className={`${burger} navigation__${burger} header__${burger}${
-          isActive ? ' active' : ''
-        }`}
-        onClick={(e) => e.preventDefault()}
-      >
+      <ul className={classMenu} onClick={(e) => e.preventDefault()}>
         {MENU.map((link) => (
-          <li
-            key={link}
-            className={`${burger}-item navigation__${burger}-item header__${burger}-item`}
-          >
+          <li key={link} className={classItem}>
             <a
-              className={`${burger}-link navigation__${burger}-link header__${burger}-link`}
+              className={classLink}
               href={`#${link}`}
               onClick={() => setIsActive && setIsActive(false)}
             >

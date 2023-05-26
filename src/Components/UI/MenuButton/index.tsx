@@ -1,14 +1,17 @@
 import { useContext } from 'react';
+import classnames from 'classnames';
 import { MenuBurgerContext } from '../../../assets/context';
 import './styles.scss';
 
 const MenuButton = () => {
   const { isActive, setIsActive } = useContext(MenuBurgerContext);
 
+  const classMenuBtn = classnames('menu-btn', { active: isActive });
+
   return (
     <button
       type='button'
-      className={`menu-btn${isActive ? ' active' : ''}`}
+      className={classMenuBtn}
       onClick={() => setIsActive(!isActive)}
     >
       <span />
