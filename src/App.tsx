@@ -2,6 +2,7 @@ import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 
 import Template from './Pages';
 import Visiting from './Pages/Visiting';
+import VirtualTour from './Pages/VirtualTour';
 
 const router = createBrowserRouter([
   {
@@ -10,11 +11,11 @@ const router = createBrowserRouter([
     children: [
       {
         index: true,
-        element: (
-          <>
-            <Visiting />
-          </>
-        ),
+        element: <Visiting />,
+      },
+      {
+        path: '/tours/:name',
+        element: <VirtualTour />,
       },
     ],
   },
