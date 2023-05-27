@@ -1,17 +1,25 @@
-import Header from './Components/Header';
-import Footer from './Components/Footer';
-import SectionWelcome from './Pages/SectionWelcome';
+import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 
-const App = () => {
-  return (
-    <>
-      <Header />
-      <main className='main'>
-        <SectionWelcome />
-      </main>
-      <Footer />
-    </>
-  );
-};
+import Template from './Pages';
+import Visiting from './Pages/Visiting';
+
+const router = createBrowserRouter([
+  {
+    path: '/',
+    element: <Template />,
+    children: [
+      {
+        index: true,
+        element: (
+          <>
+            <Visiting />
+          </>
+        ),
+      },
+    ],
+  },
+]);
+
+const App = () => <RouterProvider router={router} />;
 
 export default App;

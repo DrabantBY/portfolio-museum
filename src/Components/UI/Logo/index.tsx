@@ -9,7 +9,7 @@ export const Logo = () => {
   return (
     <a
       className='logo navigation__logo header__navigation-logo'
-      href='#'
+      href='#welcome'
       onClick={() => setIsActive(false)}
     >
       <LogoIcon />

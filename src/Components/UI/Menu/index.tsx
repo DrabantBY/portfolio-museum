@@ -35,7 +35,7 @@ const Menu: React.FC<MenuPropsType> = memo(
           <li key={link} className={classItem}>
             <a
               className={classLink}
-              href={`#${link}`}
+              href={'#' + link}
               onClick={() => setIsActive && setIsActive(false)}
             >
               {link}
