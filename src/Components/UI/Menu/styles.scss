@@ -35,12 +35,12 @@
     gap: 0.5rem 0;
   }
 
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
+
   width: 100%;
-  margin-block-start: var(--header-height);
-  padding-block-start: 1.5rem;
+  padding-block-start: calc(1.5rem + var(--header-height));
   padding-block-end: 2.5rem;
   padding-inline-start: 5.5rem;
   background-color: var(--bg-black);

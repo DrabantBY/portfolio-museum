@@ -1,4 +1,5 @@
 import { useContext } from 'react';
+import { Link } from 'react-router-dom';
 import { MenuBurgerContext } from '../../../assets/context';
 import { ReactComponent as LogoIcon } from '../../../assets/svg/logo.svg';
 import './styles.scss';
@@ -7,14 +8,14 @@ export const Logo = () => {
   const { setIsActive } = useContext(MenuBurgerContext);
 
   return (
-    <a
+    <Link
       className='logo navigation__logo header__navigation-logo'
-      href='#welcome'
+      to='/'
       onClick={() => setIsActive(false)}
     >
       <LogoIcon />
       louvre
-    </a>
+    </Link>
   );
 };
 
