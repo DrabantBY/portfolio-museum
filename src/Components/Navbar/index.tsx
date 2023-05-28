@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { MenuBurgerContext } from '../../assets/context';
+import { MenuBurgerContext } from '../../context';
 import Logo from '../UI/Logo';
 import Menu from '../UI/Menu';
 import MenuBurger from '../UI/MenuBurger';

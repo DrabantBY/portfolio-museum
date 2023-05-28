@@ -1,6 +1,6 @@
 import { useContext } from 'react';
 import { createPortal } from 'react-dom';
-import { MenuBurgerContext } from '../../../assets/context';
+import { MenuBurgerContext } from '../../../context';
 import Menu from '../Menu';
 
 const MenuBurger = () => {

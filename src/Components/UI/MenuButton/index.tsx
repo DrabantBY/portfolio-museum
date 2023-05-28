@@ -1,6 +1,6 @@
 import { useContext } from 'react';
 import classnames from 'classnames';
-import { MenuBurgerContext } from '../../../assets/context';
+import { MenuBurgerContext } from '../../../context';
 import './styles.scss';
 
 const MenuButton = () => {
