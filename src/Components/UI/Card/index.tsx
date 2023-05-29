@@ -12,17 +12,11 @@ const Card: React.FC<{ title: string; index: number }> = ({ title, index }) => {
         <figure>
           <img
             srcSet={`
-                     src/assets/images/visiting/visiting_280_${
-                       index + 1
-                     }.jpg 280w,
-                     src/assets/images/visiting/visiting_330_${
-                       index + 1
-                     }.jpg 330w,
-                     src/assets/images/visiting/visiting_440_${
-                       index + 1
-                     }.jpg 440w`}
+                     visiting/visiting_280_${index + 1}.jpg 280w,
+                     visiting/visiting_330_${index + 1}.jpg 330w,
+                     visiting/visiting_440_${index + 1}.jpg 440w`}
             sizes='(max-width: 769px) 280px, (max-width: 1025px) 330px, 440px'
-            src={`src/assets/images/visiting/visiting_440_${index + 1}.jpg`}
+            src={`visiting/visiting_440_${index + 1}.jpg`}
             alt='tour'
           />
           <figcaption className='cards-title section-visiting__cards-title'>

@@ -1,0 +1,44 @@
+@import '../../../var';
+
+.gallery-item {
+  margin-block-end: 2.4rem;
+
+  &:first-child {
+    padding-block-start: 2.6rem;
+
+    @media (max-width: $desktop) {
+      padding-block-start: 3.6rem;
+
+      @media (max-width: $tablet) {
+        padding-block-start: 3rem;
+      }
+    }
+  }
+
+  &:nth-child(11) {
+    padding-block-start: 2.6rem;
+
+    @media (max-width: $desktop) {
+      padding-block-start: 3.6rem;
+
+      @media (max-width: $tablet) {
+        padding-block-start: 0;
+      }
+    }
+  }
+}
+
+.gallery-image {
+  display: block;
+  width: 100%;
+  opacity: 0;
+  transition: all 1s linear;
+  transform: translateY(20%);
+  visibility: hidden;
+
+  &.active {
+    opacity: 1;
+    transform: none;
+    visibility: visible;
+  }
+}

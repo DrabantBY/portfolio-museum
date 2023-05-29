@@ -52,7 +52,7 @@ const SliderExplore = () => {
       >
         <img
           className='slider-explore__image-before section-explore__image-before'
-          src='src/assets/images/explore/before.jpg'
+          src='explore/before.jpg'
           alt='before'
         />
       </div>
@@ -70,7 +70,7 @@ const SliderExplore = () => {
       <div className='slider-explore__figure-after section-explore__figure-after'>
         <img
           className='slider-explore__image-after section-explore__image-after'
-          src='src/assets/images/explore/after.jpg'
+          src='explore/after.jpg'
           alt='after'
         />
       </div>
