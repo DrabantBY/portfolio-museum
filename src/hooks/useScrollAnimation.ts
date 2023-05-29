@@ -8,9 +8,9 @@ const useScrollAnimation = () => {
   useEffect(() => {
     const onScrollHandler = debounce(() => {
       if (imageRef.current) {
-        const { top: imagePosition } = imageRef.current.getBoundingClientRect();
+        const { height, top } = imageRef.current.getBoundingClientRect();
 
-        if (window.innerHeight > imagePosition) {
+        if (window.innerHeight > top - 0.2 * height) {
           setVisible(true);
         } else {
           setVisible(false);

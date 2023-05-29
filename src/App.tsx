@@ -1,10 +1,10 @@
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
-
 import Template from './Pages';
 import Visiting from './Pages/Visiting';
 import Explore from './Pages/Explore';
 import Gallery from './Pages/Gallery';
 import VirtualTour from './Pages/VirtualTour';
+import Parallax from './Components/UI/Parallax';
 
 const router = createBrowserRouter([
   {
@@ -17,6 +17,7 @@ const router = createBrowserRouter([
           <>
             <Visiting />
             <Explore />
+            <Parallax />
             <Gallery />
           </>
         ),
