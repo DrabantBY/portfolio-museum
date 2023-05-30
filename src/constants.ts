@@ -43,11 +43,11 @@ export const GALLERY = [
 ];
 
 export const MARKERS = [
-  [2.3364, 48.86091],
-  [2.3333, 48.8602],
-  [2.3397, 48.8607],
-  [2.333, 48.8619],
-  [2.3365, 48.8625],
+  { longitude: 2.3364, latitude: 48.86091 },
+  { longitude: 2.3333, latitude: 48.8602 },
+  { longitude: 2.3397, latitude: 48.8607 },
+  { longitude: 2.333, latitude: 48.8619 },
+  { longitude: 2.3365, latitude: 48.8625 },
 ];
 
 export const INIT_VOLUME = 0.1;

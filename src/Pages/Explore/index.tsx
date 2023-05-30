@@ -6,7 +6,9 @@ const Explore = () => {
   return (
     <Section sectionId='explore'>
       <div className='section-explore__body'>
-        <h2 className='section-explore__title'>picture explore</h2>
+        <h2 className='section-title section-explore__title'>
+          picture explore
+        </h2>
         <p className='section-explore__text'>
           Las Meninas is a 1656 painting by Diego Velázquez, the leading artist
           of the Spanish Golden Age.

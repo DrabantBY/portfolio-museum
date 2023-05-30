@@ -32,9 +32,11 @@
   display: block;
   width: 100%;
   opacity: 0;
-  transition: all 1s linear;
   transform: translateY(20%);
   visibility: hidden;
+  transition-property: opacity, transform, visibility;
+  transition-duration: 0.5s;
+  transition-timing-function: linear;
 
   &.active {
     opacity: 1;

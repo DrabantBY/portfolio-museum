@@ -1,0 +1,12 @@
+@import '../../var';
+
+.mapboxgl {
+  &-map {
+    max-width: 960px;
+    max-height: 620px;
+
+    // @media (max-width: $tablet) {
+    //   min-height: 476px;
+    // }
+  }
+}
