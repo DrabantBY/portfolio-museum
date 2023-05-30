@@ -1,19 +1,14 @@
 @import '../../var';
 
-.mapboxgl {
-  &-map {
-    max-width: 960px;
-    max-height: 620px;
+.mapboxgl-map {
+  @media (max-width: $desktop) {
+    max-height: 455px;
 
-    @media (max-width: $desktop) {
-      max-height: 455px;
+    @media (max-width: $tablet) {
+      max-height: 475px;
 
-      @media (max-width: $tablet) {
-        max-height: 475px;
-
-        @media (max-width: $mobile) {
-          max-height: 245px;
-        }
+      @media (max-width: $mobile) {
+        max-height: 245px;
       }
     }
   }
