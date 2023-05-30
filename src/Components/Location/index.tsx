@@ -5,14 +5,13 @@ import 'mapbox-gl/dist/mapbox-gl.css';
 import './styles.scss';
 
 const Location = () => {
-  const [longitude, latitude] = [2.335824, 48.86088];
   return (
     <Map
       initialViewState={{
         ...MARKERS[0],
         zoom: 16,
       }}
-      mapboxAccessToken='pk.eyJ1IjoiZHJhYmFudCIsImEiOiJjbGlhODd5eHUwMTQwM21xcG56MzAwaTBoIn0._naaX3HMJYVM2sbmgfjSvg'
+      mapboxAccessToken={import.meta.env.VITE_MAP_ACCESS_TOKEN}
       mapStyle='mapbox://styles/mapbox/light-v10'
       style={{ maxWidth: '960px', height: '620px' }}
     >
