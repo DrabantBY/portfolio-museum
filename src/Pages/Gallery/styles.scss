@@ -1,5 +1,9 @@
 @import '../../var';
 
+#gallery {
+  padding-block-end: 0;
+}
+
 .section-gallery {
   --column-gap: 3.6rem;
   --column-count: 3;

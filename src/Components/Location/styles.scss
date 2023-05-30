@@ -5,8 +5,16 @@
     max-width: 960px;
     max-height: 620px;
 
-    // @media (max-width: $tablet) {
-    //   min-height: 476px;
-    // }
+    @media (max-width: $desktop) {
+      max-height: 455px;
+
+      @media (max-width: $tablet) {
+        max-height: 475px;
+
+        @media (max-width: $mobile) {
+          max-height: 245px;
+        }
+      }
+    }
   }
 }

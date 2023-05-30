@@ -23,7 +23,6 @@ const Contacts = () => {
             </li>
           </ul>
         </address>
-
         <Location />
       </div>
     </Section>
