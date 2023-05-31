@@ -13,7 +13,7 @@ const Location = () => {
       }}
       mapboxAccessToken={import.meta.env.VITE_MAP_ACCESS_TOKEN}
       mapStyle='mapbox://styles/mapbox/light-v10'
-      style={{ width: '960px', height: '620px' }}
+      style={{ maxWidth: '960px', height: '620px' }}
     >
       <NavigationControl />
       {MARKERS.map((marker, index) => (

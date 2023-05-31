@@ -1,4 +1,5 @@
 import { memo } from 'react';
+import { Link } from 'react-router-dom';
 import classnames from 'classnames';
 import { MENU } from '../../../constants';
 
@@ -33,14 +34,14 @@ const Menu: React.FC<MenuPropsType> = memo(
       <ul className={classMenu} onClick={(e) => e.preventDefault()}>
         {MENU.map((link) => (
           <li key={link} className={classItem}>
-            <a
+            <Link
               className={classLink}
-              href={'#' + link}
+              to={'/#' + link}
               onClick={() => setIsActive && setIsActive(false)}
             >
               {link}
               {isBurger && <ArrowLinkIcon />}
-            </a>
+            </Link>
           </li>
         ))}
       </ul>
