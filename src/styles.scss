@@ -18,7 +18,7 @@
 
   --gold: #9d8665;
   --gold-hover: #9d8665;
-  // --gold-active: #7e6c51;
+  --gold-active: #7e6c51;
   --gold-select: #caaa7d;
 
   // --gray: #999999;
@@ -214,6 +214,7 @@ main {
 a {
   color: inherit;
   text-decoration: none;
+  transition: color 0.2s linear;
 }
 
 ul,
@@ -222,7 +223,9 @@ ol {
 }
 
 svg path {
-  transition: fill 0.2s linear;
+  transition-property: stroke, fill;
+  transition-duration: 0.2s;
+  transition-timing-function: linear;
 }
 
 button {
