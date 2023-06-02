@@ -1,4 +1,6 @@
 import Logo from '../UI/Logo';
+import Menu from '../UI/Menu';
+import SocialNet from '../UI/SocialNet';
 import { ReactComponent as RsLogo } from '../../assets/svg/footer/rs-logo.svg';
 import { ReactComponent as GithubLogo } from '../../assets/svg/footer/github-logo.svg';
 import './styles.scss';
@@ -8,7 +10,9 @@ const Footer = () => {
     <footer className='footer'>
       <div className='container footer__container'>
         <div className='footer__body'>
-          <Logo />
+          <Logo position='footer' />
+          <Menu position='footer' />
+          <SocialNet />
         </div>
       </div>
 

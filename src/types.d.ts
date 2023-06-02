@@ -4,5 +4,6 @@ export type MenuBurgerType = {
 };
 
 export type MenuPropsType = {
+  position: 'header' | 'footer';
   isBurger?: boolean;
 } & Partial<Pick<MenuBurgerType, 'isActive' | 'setIsActive'>>;

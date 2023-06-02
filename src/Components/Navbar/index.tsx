@@ -11,8 +11,8 @@ const Navbar = () => {
   return (
     <MenuBurgerContext.Provider value={{ isActive, setIsActive }}>
       <nav className='navigation header__navigation'>
-        <Logo />
-        <Menu />
+        <Logo position='header' />
+        <Menu position='header' />
         <MenuBurger />
         <MenuButton />
       </nav>

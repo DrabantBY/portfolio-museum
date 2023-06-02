@@ -8,26 +8,26 @@ import { MenuPropsType } from '../../../types';
 import './styles.scss';
 
 const Menu: React.FC<MenuPropsType> = memo(
-  ({ isBurger, isActive, setIsActive }) => {
+  ({ position, isBurger, isActive, setIsActive }) => {
     const burger = isBurger ? 'menu-burger' : 'menu';
 
     const classMenu = classnames(
       burger,
       `navigation__${burger}`,
-      `header__${burger}`,
+      `${position}__${burger}`,
       { active: isActive }
     );
 
     const classItem = classnames(
       `${burger}-item`,
       `navigation__${burger}-item`,
-      `header__${burger}-item`
+      `${position}__${burger}-item`
     );
 
     const classLink = classnames(
       `${burger}-link`,
       `navigation__${burger}-link`,
-      `header__${burger}-link`
+      `${position}__${burger}-link`
     );
 
     return (

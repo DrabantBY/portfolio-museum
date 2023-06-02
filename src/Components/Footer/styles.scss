@@ -1,7 +1,41 @@
 @import '../../var.scss';
 
 .footer {
-  hr {
+  padding-block-start: var(--section-py);
+
+  &__body {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    column-gap: 4rem;
+    row-gap: 2rem;
+    margin-block-end: 4rem;
+
+    @media (max-width: $mobile) {
+      flex-direction: column;
+    }
+  }
+
+  &__menu {
+    flex-grow: 1;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    justify-items: center;
+    column-gap: 2rem;
+
+    @media (max-width: $mobile) {
+      align-self: stretch;
+      &-item:nth-child(3n + 1) {
+        justify-self: start;
+      }
+
+      &-item:nth-child(3n + 3) {
+        justify-self: end;
+      }
+    }
+  }
+  ß hr {
     height: 0.2rem;
     background-color: '#666666';
   }

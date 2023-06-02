@@ -6,6 +6,7 @@ import Gallery from './Pages/Gallery';
 import VirtualTour from './Pages/VirtualTour';
 import Parallax from './Components/UI/Parallax';
 import Contacts from './Pages/Contacts';
+import Tickets from './Pages/Tickets';
 
 const router = createBrowserRouter([
   {
@@ -18,8 +19,9 @@ const router = createBrowserRouter([
           <>
             <Visiting />
             <Explore />
-            <Parallax />
             <Gallery />
+            <Tickets />
+            <Parallax />
             <Contacts />
           </>
         ),

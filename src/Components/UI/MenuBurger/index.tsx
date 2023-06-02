@@ -5,7 +5,10 @@ import Menu from '../Menu';
 
 const MenuBurger = () => {
   const context = useContext(MenuBurgerContext);
-  return createPortal(<Menu isBurger={true} {...context} />, document.body);
+  return createPortal(
+    <Menu position='header' isBurger={true} {...context} />,
+    document.body
+  );
 };
 
 export default MenuBurger;

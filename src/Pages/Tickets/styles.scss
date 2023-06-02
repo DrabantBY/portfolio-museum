@@ -1,0 +1,33 @@
+@import '../../var';
+
+.section-tickets {
+  background-color: var(--white);
+
+  &__title {
+    position: relative;
+    color: var(--gold);
+    margin-block-end: var(--section-title-mb);
+
+    &::after {
+      content: '';
+      position: absolute;
+      left: 0;
+      bottom: -2.5rem;
+      width: 100%;
+      height: 0.3rem;
+      background-color: var(--bg-red);
+    }
+  }
+
+  &__body {
+    display: flex;
+    justify-content: space-between;
+    column-gap: 6rem;
+  }
+
+  &__form {
+    color: var(--black);
+    display: flex;
+    justify-content: space-between;
+  }
+}

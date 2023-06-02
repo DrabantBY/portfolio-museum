@@ -50,4 +50,12 @@ export const MARKERS = [
   { longitude: 2.3365, latitude: 48.8625 },
 ];
 
+export const SOCIAL = [
+  'https://www.youtube.com/@MuseeLouvre',
+  'https://www.instagram.com/museelouvre/',
+  'https://www.facebook.com/museedulouvre/',
+  'https://twitter.com/MuseeLouvre',
+  'https://www.pinterest.com/adriennelods/paris-louvre/',
+];
+
 export const INIT_VOLUME = 0.1;
