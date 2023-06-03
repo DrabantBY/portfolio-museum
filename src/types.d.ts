@@ -19,7 +19,8 @@ export type FormFieldRadioProps = {
 
 export type FormFieldNumberProps = {
   value: number;
-} & Omit<FormFieldRadioProps, 'initValue' | 'isChecked'>;
+  handleClick: (name: string, value: number, step: 1 | -1) => void;
+} & Omit<FormFieldRadioProps, 'initValue' | 'isChecked' | 'handleChange'>;
 
 export type FormInitStateType = {
   price: number;
@@ -27,17 +28,3 @@ export type FormInitStateType = {
   senior: number;
   total: number;
 };
-
-export type ActionReducerType =
-  | {
-      type: string;
-      price: number;
-    }
-  | {
-      type: string;
-      basic: number;
-    }
-  | {
-      type: string;
-      senior: number;
-    };

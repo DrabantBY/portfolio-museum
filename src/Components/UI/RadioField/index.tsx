@@ -4,7 +4,6 @@ import './styles.scss';
 
 const RadioField: React.FC<FormFieldRadioProps> = memo(
   ({ className, label, name, initValue, handleChange, isChecked }) => {
-    console.log(initValue, 'render');
     return (
       <label className={className}>
         <input

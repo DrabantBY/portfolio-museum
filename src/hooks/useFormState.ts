@@ -8,10 +8,10 @@ const initialState: FormInitStateType = {
   total: 0,
 };
 
-// const getInitialState = (): FormInitStateType => {
-//   const formState = localStorage.getItem('formState');
-//   return formState ? JSON.parse(formState) : initialState;
-// };
+const getInitialState = (): FormInitStateType => {
+  const formState = localStorage.getItem('formState');
+  return formState ? JSON.parse(formState) : initialState;
+};
 
 const reducer = (state: FormInitStateType, action) => {
   switch (action.type) {
@@ -41,11 +41,11 @@ const reducer = (state: FormInitStateType, action) => {
 };
 
 const useFormState = () => {
-  const [state, dispatch] = useReducer(reducer, initialState);
+  const [state, dispatch] = useReducer(reducer, initialState, getInitialState);
 
-  // useEffect(() => {
-  //   localStorage.setItem('formState', JSON.stringify(state));
-  // }, [state]);
+  useEffect(() => {
+    localStorage.setItem('formState', JSON.stringify(state));
+  }, [state]);
 
   const setPrice: React.ChangeEventHandler<HTMLInputElement> = useCallback(
     (e) => {
@@ -57,17 +57,14 @@ const useFormState = () => {
     []
   );
 
-  const setAmount: React.ChangeEventHandler<HTMLInputElement> = useCallback(
-    (e) => {
-      dispatch({
-        type: `changed_${e.target.name}`,
-        [e.target.name]: Number(e.target.value),
-      });
-    },
-    []
-  );
+  const setAmount = useCallback((name: string, value: number, step: 1 | -1) => {
+    dispatch({
+      type: `changed_${name}`,
+      [name]: value + step,
+    });
+  }, []);
 
-  return { state, setPrice, setAmount };
+  return { ...state, setPrice, setAmount };
 };
 
 export default useFormState;

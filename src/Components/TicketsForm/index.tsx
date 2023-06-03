@@ -4,7 +4,7 @@ import useFormState from '../../hooks/useFormState';
 import './styles.scss';
 
 const TicketsForm = () => {
-  const { state, setAmount, setPrice } = useFormState();
+  const { price, total, basic, senior, setPrice, setAmount } = useFormState();
   // console.log(state);
   return (
     <form className='section-tickets__form'>
@@ -19,7 +19,7 @@ const TicketsForm = () => {
           name='ticket-type'
           initValue='20'
           handleChange={setPrice}
-          isChecked={20 === state.price}
+          isChecked={20 === price}
         />
         <RadioField
           className='form-radio-field section-tickets__form-radio-field'
@@ -27,7 +27,7 @@ const TicketsForm = () => {
           name='ticket-type'
           initValue='30'
           handleChange={setPrice}
-          isChecked={30 === state.price}
+          isChecked={30 === price}
         />
         <RadioField
           className='form-radio-field section-tickets__form-radio-field'
@@ -35,7 +35,7 @@ const TicketsForm = () => {
           name='ticket-type'
           initValue='40'
           handleChange={setPrice}
-          isChecked={40 === state.price}
+          isChecked={40 === price}
         />
       </div>
 
@@ -48,19 +48,19 @@ const TicketsForm = () => {
           className='form-number-field section-tickets__form-number-field'
           label='basic 18+'
           name='basic'
-          value={state.basic}
-          handleChange={setAmount}
+          value={basic}
+          handleClick={setAmount}
         />
         <NumberField
           className='form-number-field section-tickets__form-number-field'
           label='senior 65+'
           name='senior'
-          value={state.senior}
-          handleChange={setAmount}
+          value={senior}
+          handleClick={setAmount}
         />
 
         <span className='form-total section-tickets__form-total'>
-          Total: <span>{state.total}€</span>
+          Total: <span>{total}€</span>
         </span>
 
         <button className='form-btn section-tickets__form-btn' type='button'>
