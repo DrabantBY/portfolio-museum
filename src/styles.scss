@@ -243,6 +243,14 @@ button {
   }
 }
 
+input {
+  border: none;
+
+  &:focus {
+    outline: none;
+  }
+}
+
 // input[type='range'] {
 //   appearance: none;
 //   -webkit-appearance: none;
@@ -281,23 +289,3 @@ button {
   padding-inline: 2rem;
   margin-inline: auto;
 }
-
-// .logo,
-// .menu-link {
-//   &.active {
-//     color: var(--gold-active);
-
-//     svg path {
-//       fill: var(--gold-active);
-//     }
-//   }
-
-//   &:hover,
-//   &.active:hover {
-//     color: var(--gold-hover);
-
-//     svg path {
-//       fill: var(--gold-hover);
-//     }
-//   }
-// }
