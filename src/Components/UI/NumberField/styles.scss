@@ -32,6 +32,11 @@
       -webkit-appearance: none;
       margin: 0;
     }
+
+    &:disabled {
+      color: inherit;
+      background: none;
+    }
   }
 
   button {

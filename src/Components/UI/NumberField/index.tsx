@@ -16,6 +16,7 @@ const NumberField: React.FC<FormFieldNumberProps> = memo(
             –
           </button>
           <input
+            disabled
             type='number'
             name={name}
             value={value}
