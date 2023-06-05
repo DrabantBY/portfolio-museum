@@ -28,3 +28,17 @@ export type FormInitStateType = {
   senior: number;
   total: number;
 };
+
+export type ActionType =
+  | {
+      type: 'price';
+      price: number;
+    }
+  | {
+      type: 'basic';
+      basic: number;
+    }
+  | {
+      type: 'senior';
+      senior: number;
+    };

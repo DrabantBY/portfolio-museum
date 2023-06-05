@@ -25,7 +25,7 @@ const NumberField: React.FC<FormFieldNumberProps> = memo(
           />
           <button
             type='button'
-            disabled={value === 999}
+            disabled={value === 10}
             onClick={() => handleClick(name, value, 1)}
           >
             +

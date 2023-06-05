@@ -1,5 +1,5 @@
 import { useReducer, useEffect, useCallback } from 'react';
-import { FormInitStateType } from '../types';
+import { FormInitStateType, ActionType } from '../types';
 
 const initialState: FormInitStateType = {
   price: 20,
@@ -13,23 +13,23 @@ const getInitialState = (): FormInitStateType => {
   return formState ? JSON.parse(formState) : initialState;
 };
 
-const reducer = (state: FormInitStateType, action) => {
+const reducer = (state: FormInitStateType, action: ActionType) => {
   switch (action.type) {
-    case 'changed_price':
+    case 'price':
       return {
         ...state,
         price: action.price,
         total: action.price * state.basic + (action.price * state.senior) / 2,
       };
 
-    case 'changed_basic':
+    case 'basic':
       return {
         ...state,
         basic: action.basic,
         total: state.price * action.basic + (state.price * state.senior) / 2,
       };
 
-    case 'changed_senior':
+    case 'senior':
       return {
         ...state,
         senior: action.senior,
@@ -51,7 +51,7 @@ const useFormState = () => {
   const setPrice: React.ChangeEventHandler<HTMLInputElement> = useCallback(
     (e) => {
       dispatch({
-        type: 'changed_price',
+        type: 'price',
         price: Number(e.target.value),
       });
     },
@@ -59,10 +59,10 @@ const useFormState = () => {
   );
 
   const setAmount = useCallback((name: string, value: number, step: 1 | -1) => {
-    dispatch({
-      type: `changed_${name}`,
+    return dispatch({
+      type: name,
       [name]: value + step,
-    });
+    } as ActionType);
   }, []);
 
   return { ...state, setPrice, setAmount };

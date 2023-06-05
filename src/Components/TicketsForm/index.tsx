@@ -1,3 +1,4 @@
+import Modal from '../Modal';
 import NumberField from '../UI/NumberField';
 import RadioField from '../UI/RadioField';
 import useFormState from '../../hooks/useFormState';
@@ -5,7 +6,7 @@ import './styles.scss';
 
 const TicketsForm = () => {
   const { price, total, basic, senior, setPrice, setAmount } = useFormState();
-  // console.log(state);
+
   return (
     <form className='section-tickets__form'>
       <div className='form-types section-tickets__form-types'>
@@ -63,9 +64,7 @@ const TicketsForm = () => {
           Total: <span>{total}€</span>
         </span>
 
-        <button className='form-btn section-tickets__form-btn' type='button'>
-          buy now
-        </button>
+        <Modal />
       </div>
     </form>
   );
