@@ -19,20 +19,6 @@
     }
   }
 
-  &-amount {
-    label + label {
-      margin-block-start: 1rem;
-
-      @media (max-width: $desktop) {
-        margin-block-start: 2.5rem;
-
-        @media (max-width: $tablet) {
-          margin-block-start: 2rem;
-        }
-      }
-    }
-  }
-
   &-title {
     font-weight: 700;
     font-size: 2.8rem;

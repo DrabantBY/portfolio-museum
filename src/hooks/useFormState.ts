@@ -21,6 +21,7 @@ const reducer = (state: FormInitStateType, action) => {
         price: action.price,
         total: action.price * state.basic + (action.price * state.senior) / 2,
       };
+
     case 'changed_basic':
       return {
         ...state,

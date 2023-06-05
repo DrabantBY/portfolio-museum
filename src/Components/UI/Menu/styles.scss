@@ -8,6 +8,7 @@
   line-height: 2.6rem;
   letter-spacing: 0.2rem;
   text-transform: capitalize;
+  cursor: pointer;
 
   @media (max-width: $tablet) {
     font-size: 1.8rem;
@@ -21,6 +22,10 @@
 
   &:hover {
     color: var(--gold-hover);
+  }
+
+  &.active {
+    color: var(--gold-active);
   }
 }
 
@@ -63,12 +68,17 @@
     letter-spacing: 0.2rem;
     text-transform: capitalize;
     transition: color 0.2s linear;
+    cursor: pointer;
 
     &:hover {
       color: var(--gold-hover);
       svg path {
         fill: var(--gold-hover);
       }
+    }
+
+    &.active {
+      color: var(--gold-active);
     }
   }
 }

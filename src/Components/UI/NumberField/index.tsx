@@ -5,8 +5,8 @@ import './styles.scss';
 const NumberField: React.FC<FormFieldNumberProps> = memo(
   ({ className, label, name, value, handleClick }) => {
     return (
-      <label className={className}>
-        {label}
+      <div className={className}>
+        <label htmlFor={name}>{label}</label>
         <span>
           <button
             type='button'
@@ -16,17 +16,22 @@ const NumberField: React.FC<FormFieldNumberProps> = memo(
             –
           </button>
           <input
+            id={name}
             disabled
             type='number'
             name={name}
             value={value}
             onChange={(e) => e.preventDefault()}
           />
-          <button type='button' onClick={() => handleClick(name, value, 1)}>
+          <button
+            type='button'
+            disabled={value === 999}
+            onClick={() => handleClick(name, value, 1)}
+          >
             +
           </button>
         </span>
-      </label>
+      </div>
     );
   }
 );

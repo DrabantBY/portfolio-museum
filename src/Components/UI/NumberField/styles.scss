@@ -45,4 +45,16 @@
     line-height: 3.8rem;
     text-align: center;
   }
+
+  & + & {
+    margin-block-start: 1rem;
+
+    @media (max-width: $desktop) {
+      margin-block-start: 2.5rem;
+
+      @media (max-width: $tablet) {
+        margin-block-start: 2rem;
+      }
+    }
+  }
 }
