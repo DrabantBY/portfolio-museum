@@ -12,6 +12,7 @@ const SocialNet = () => {
         <a
           href='https://www.youtube.com/@MuseeLouvre'
           className='social-link footer__social-link'
+          target='_blank'
         >
           <YoutubeIcon />
         </a>
@@ -20,6 +21,7 @@ const SocialNet = () => {
         <a
           href='https://www.instagram.com/museelouvre/'
           className='social-link footer__social-link'
+          target='_blank'
         >
           <InstagramIcon />
         </a>
@@ -28,6 +30,7 @@ const SocialNet = () => {
         <a
           href='https://www.facebook.com/museedulouvre/'
           className='social-link footer__social-link'
+          target='_blank'
         >
           <FacebookIcon />
         </a>
@@ -36,6 +39,7 @@ const SocialNet = () => {
         <a
           href='https://twitter.com/MuseeLouvre'
           className='social-link footer__social-link'
+          target='_blank'
         >
           <TwitterIcon />
         </a>
@@ -44,6 +48,7 @@ const SocialNet = () => {
         <a
           href='https://www.pinterest.com/adriennelods/paris-louvre/'
           className='social-link footer__social-link'
+          target='_blank'
         >
           <PinterestIcon />
         </a>
