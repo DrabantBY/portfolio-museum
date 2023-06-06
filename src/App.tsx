@@ -7,6 +7,7 @@ import VirtualTour from './Pages/VirtualTour';
 import Parallax from './Components/UI/Parallax';
 import Contacts from './Pages/Contacts';
 import Tickets from './Pages/Tickets';
+import Booking from './Pages/Booking';
 
 const router = createBrowserRouter([
   {
@@ -31,6 +32,10 @@ const router = createBrowserRouter([
         element: <VirtualTour />,
       },
     ],
+  },
+  {
+    path: '/booking',
+    element: <Booking />,
   },
 ]);
 

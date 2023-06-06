@@ -1,4 +1,4 @@
-import Modal from '../Modal';
+import { Link } from 'react-router-dom';
 import NumberField from '../UI/NumberField';
 import RadioField from '../UI/RadioField';
 import useFormState from '../../hooks/useFormState';
@@ -64,7 +64,9 @@ const TicketsForm = () => {
           Total: <span>{total}€</span>
         </span>
 
-        <Modal />
+        <Link className='form-link section-tickets__form-link' to='/booking'>
+          buy now
+        </Link>
       </div>
     </form>
   );

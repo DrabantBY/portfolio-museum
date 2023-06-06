@@ -1,0 +1,103 @@
+@import '../../var';
+
+.booking {
+  position: relative;
+  min-height: 100vh;
+  background-color: var(--white);
+
+  &__body {
+    display: grid;
+    grid-template-columns: 40rem 1fr;
+    column-gap: 4rem;
+    max-width: 103rem;
+    margin-inline: auto;
+    padding-inline: 3rem;
+    margin-block-start: 9.5rem;
+
+    @media (max-width: $desktop) {
+      margin-block-start: 7.5rem;
+    }
+  }
+
+  &__btn-close {
+    position: absolute;
+    top: 3rem;
+    right: 3rem;
+    display: flex;
+    width: fit-content;
+    height: 2.5rem;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+
+    span {
+      width: 3.5rem;
+      height: 0.2rem;
+      background-color: var(--bg-black);
+      transition: background-color 0.2s linear;
+
+      &:first-child {
+        transform: translateY(0.1rem) rotate(45deg);
+      }
+      &:last-child {
+        transform: translateY(-0.1rem) rotate(-45deg);
+      }
+    }
+
+    &:hover {
+      span {
+        background-color: var(--gold-hover);
+      }
+    }
+  }
+
+  &-title {
+    display: flex;
+    flex-direction: column;
+    font-family: 'Forum';
+    font-weight: 400;
+    font-size: 5rem;
+    line-height: 5.5rem;
+    margin-block-end: 1.5rem;
+    text-transform: uppercase;
+    color: var(--gold);
+
+    @media (max-width: $mobile) {
+      font-size: 3.2rem;
+      line-height: 3.5rem;
+    }
+
+    svg {
+      width: 8.5rem;
+      height: 4rem;
+
+      path {
+        fill: currentColor;
+      }
+    }
+  }
+
+  &-subtitle {
+    grid-column: 1/2;
+    position: relative;
+    font-weight: 400;
+    font-size: 1.8rem;
+    line-height: 2.1rem;
+    color: var(--bg-red);
+    margin-block-end: 7.5rem;
+
+    @media (max-width: $tablet) {
+      margin-block-end: 6rem;
+    }
+
+    &::after {
+      content: '';
+      position: absolute;
+      left: 0;
+      bottom: -1rem;
+      width: 100%;
+      height: 0.3rem;
+      background-color: currentColor;
+    }
+  }
+}
