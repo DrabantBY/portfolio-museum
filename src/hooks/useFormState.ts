@@ -2,10 +2,13 @@ import { useReducer, useEffect, useCallback } from 'react';
 import { FormInitStateType, ActionType } from '../types';
 
 const initialState: FormInitStateType = {
-  price: 20,
+  price: 0,
   basic: 0,
   senior: 0,
   total: 0,
+  name: '',
+  phone: '',
+  email: '',
 };
 
 const getInitialState = (): FormInitStateType => {
@@ -34,6 +37,24 @@ const reducer = (state: FormInitStateType, action: ActionType) => {
         ...state,
         senior: action.senior,
         total: state.price * state.basic + (state.price * action.senior) / 2,
+      };
+
+    case 'name':
+      return {
+        ...state,
+        name: action.name,
+      };
+
+    case 'phone':
+      return {
+        ...state,
+        phone: action.phone,
+      };
+
+    case 'email':
+      return {
+        ...state,
+        email: action.email,
       };
 
     default:
@@ -65,7 +86,17 @@ const useFormState = () => {
     } as ActionType);
   }, []);
 
-  return { ...state, setPrice, setAmount };
+  const setInputValue: React.ChangeEventHandler<HTMLInputElement> = useCallback(
+    (e) => {
+      dispatch({
+        type: e.target.name,
+        [e.target.name]: e.target.value,
+      } as ActionType);
+    },
+    []
+  );
+
+  return { state, setPrice, setAmount, setInputValue };
 };
 
 export default useFormState;

@@ -3,14 +3,14 @@ import { FormFieldRadioProps } from '../../../types';
 import './styles.scss';
 
 const RadioField: React.FC<FormFieldRadioProps> = memo(
-  ({ className, label, name, initValue, handleChange, isChecked }) => {
+  ({ className, label, name, constValue, handleChange, isChecked }) => {
     return (
       <label className={className}>
         <input
           type='radio'
           name={name}
           onChange={handleChange}
-          value={initValue}
+          value={constValue}
           checked={isChecked}
         />
         {label}

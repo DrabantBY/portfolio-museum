@@ -5,7 +5,7 @@ import useFormState from '../../hooks/useFormState';
 import './styles.scss';
 
 const TicketsForm = () => {
-  const { price, total, basic, senior, setPrice, setAmount } = useFormState();
+  const { state, setPrice, setAmount } = useFormState();
 
   return (
     <form className='section-tickets__form'>
@@ -18,25 +18,25 @@ const TicketsForm = () => {
           className='form-radio-field section-tickets__form-radio-field'
           label='permanent exhibition'
           name='ticket-type'
-          initValue='20'
+          constValue='20'
           handleChange={setPrice}
-          isChecked={20 === price}
+          isChecked={20 === state.price}
         />
         <RadioField
           className='form-radio-field section-tickets__form-radio-field'
           label='temporary exhibition'
           name='ticket-type'
-          initValue='30'
+          constValue='30'
           handleChange={setPrice}
-          isChecked={30 === price}
+          isChecked={30 === state.price}
         />
         <RadioField
           className='form-radio-field section-tickets__form-radio-field'
           label='combined admission'
           name='ticket-type'
-          initValue='40'
+          constValue='40'
           handleChange={setPrice}
-          isChecked={40 === price}
+          isChecked={40 === state.price}
         />
       </div>
 
@@ -49,19 +49,19 @@ const TicketsForm = () => {
           className='form-number-field section-tickets__form-number-field'
           label='basic 18+'
           name='basic'
-          value={basic}
+          value={state.basic}
           handleClick={setAmount}
         />
         <NumberField
           className='form-number-field section-tickets__form-number-field'
           label='senior 65+'
           name='senior'
-          value={senior}
+          value={state.senior}
           handleClick={setAmount}
         />
 
         <span className='form-total section-tickets__form-total'>
-          Total: <span>{total}€</span>
+          Total: <span>{state.total}€</span>
         </span>
 
         <Link className='form-link section-tickets__form-link' to='/booking'>

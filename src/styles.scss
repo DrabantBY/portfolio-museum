@@ -248,6 +248,17 @@ input {
   &:focus {
     outline: none;
   }
+  &::placeholder {
+    color: inherit;
+  }
+}
+
+select {
+  border: none;
+
+  &:focus {
+    outline: none;
+  }
 }
 
 // input[type='range'] {
