@@ -22,6 +22,7 @@ const TicketsForm = () => {
           handleChange={setPrice}
           isChecked={20 === state.price}
         />
+
         <RadioField
           className='form-radio-field section-tickets__form-radio-field'
           label='temporary exhibition'
@@ -30,6 +31,7 @@ const TicketsForm = () => {
           handleChange={setPrice}
           isChecked={30 === state.price}
         />
+
         <RadioField
           className='form-radio-field section-tickets__form-radio-field'
           label='combined admission'

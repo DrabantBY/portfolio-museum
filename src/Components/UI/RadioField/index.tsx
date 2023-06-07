@@ -1,8 +1,8 @@
 import { memo } from 'react';
-import { FormFieldRadioProps } from '../../../types';
+import { FieldRadioProps } from '../../../types';
 import './styles.scss';
 
-const RadioField: React.FC<FormFieldRadioProps> = memo(
+const RadioField: React.FC<FieldRadioProps> = memo(
   ({ className, label, name, constValue, handleChange, isChecked }) => {
     return (
       <label className={className}>

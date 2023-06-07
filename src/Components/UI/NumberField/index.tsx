@@ -1,8 +1,8 @@
 import { memo } from 'react';
-import { FormFieldNumberProps } from '../../../types';
+import { FieldNumberProps } from '../../../types';
 import './styles.scss';
 
-const NumberField: React.FC<FormFieldNumberProps> = memo(
+const NumberField: React.FC<FieldNumberProps> = memo(
   ({ className, label, name, value, handleClick }) => {
     return (
       <div className={className}>

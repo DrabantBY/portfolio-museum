@@ -10,7 +10,7 @@ export type MenuPropsType = {
   isBurger?: boolean;
 } & Partial<Pick<MenuBurgerType, 'isActive' | 'setIsActive'>>;
 
-export type FormFieldRadioProps = {
+export type FieldRadioProps = {
   className: string;
   label: string;
   name: string;
@@ -19,7 +19,7 @@ export type FormFieldRadioProps = {
   isChecked: boolean;
 };
 
-export type FormFieldNumberProps = {
+export type FieldNumberProps = {
   value: number;
   handleClick: (name: string, value: number, step: 1 | -1) => void;
 } & Omit<FormFieldRadioProps, 'constValue' | 'isChecked' | 'handleChange'>;
