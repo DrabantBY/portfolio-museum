@@ -1,7 +1,19 @@
 .field-form {
   position: relative;
   height: 4.5rem;
-  border: 0.1rem solid var(--bg-black);
+  border: 0.2rem solid var(--bg-black);
+
+  &.error {
+    border-color: var(--bg-red);
+
+    input {
+      color: var(--bg-red);
+    }
+
+    svg path {
+      fill: var(--bg-red);
+    }
+  }
 
   input {
     width: 100%;
@@ -9,7 +21,10 @@
     padding-inline-start: 4.5rem;
     font-size: 1.8rem;
     line-height: 2.1rem;
-    text-transform: capitalize;
+
+    &::placeholder {
+      text-transform: capitalize;
+    }
   }
 
   svg {
@@ -17,5 +32,15 @@
     top: 50%;
     left: 1.5rem;
     transform: translateY(-50%);
+  }
+
+  span {
+    position: absolute;
+    left: 0;
+    bottom: -45%;
+    font-weight: 700;
+    font-size: 1.2rem;
+    line-height: 1.5rem;
+    color: var(--bg-red);
   }
 }

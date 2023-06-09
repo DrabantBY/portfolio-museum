@@ -24,14 +24,33 @@ export type FieldNumberProps = {
   handleClick: (name: string, value: number, step: 1 | -1) => void;
 } & Omit<FormFieldRadioProps, 'constValue' | 'isChecked' | 'handleChange'>;
 
+export type FieldValueType = {
+  value: string;
+  error: boolean;
+};
+
+export type FieldNamesType = 'name' | 'phone' | 'email' | 'date' | 'time';
+
+export type FieldInputProps = {
+  children: ReactNode;
+  className: string;
+  type: string;
+  name: FieldNamesType;
+  placeholder: string;
+  min?: string;
+  max?: string;
+};
+
 export type FormInitStateType = {
   price: number;
   basic: number;
   senior: number;
   total: number;
-  name: string;
-  phone: string;
-  email: string;
+  date: string;
+  time: string;
+  name: FieldValueType;
+  phone: FieldValueType;
+  email: FieldValueType;
 };
 
 export type ActionType =
@@ -58,12 +77,12 @@ export type ActionType =
   | {
       type: 'email';
       email: string;
+    }
+  | {
+      type: 'date';
+      date: string;
+    }
+  | {
+      type: 'time';
+      time: string;
     };
-
-export type InputFieldProps = {
-  children: ReactNode;
-  className: string;
-  type: string;
-  name: string;
-  placeholder: string;
-};

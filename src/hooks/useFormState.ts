@@ -6,9 +6,11 @@ const initialState: FormInitStateType = {
   basic: 0,
   senior: 0,
   total: 0,
-  name: '',
-  phone: '',
-  email: '',
+  date: '',
+  time: '',
+  name: { value: '', error: false },
+  phone: { value: '', error: false },
+  email: { value: '', error: false },
 };
 
 const getInitialState = (): FormInitStateType => {
@@ -42,19 +44,42 @@ const reducer = (state: FormInitStateType, action: ActionType) => {
     case 'name':
       return {
         ...state,
-        name: action.name,
+        name: {
+          value: action.name,
+          error: !/^([a-z\s]{3,15})?$/i.test(action.name),
+        },
       };
 
     case 'phone':
       return {
         ...state,
-        phone: action.phone,
+        phone: {
+          value: action.phone,
+          error: !/^(\d{6,10})?$/.test(action.phone),
+        },
       };
 
     case 'email':
       return {
         ...state,
-        email: action.email,
+        email: {
+          value: action.email,
+          error: !/^([a-zA-Z\d_-]{3,15}@[a-z]{4,}\.[a-z]{2,})?$/i.test(
+            action.email
+          ),
+        },
+      };
+
+    case 'date':
+      return {
+        ...state,
+        date: action.date,
+      };
+
+    case 'time':
+      return {
+        ...state,
+        time: action.time,
       };
 
     default:

@@ -1,27 +1,41 @@
-import { ReactComponent as DateIcon } from '../../assets/svg/booking/date.svg';
 import { ReactComponent as TimeIcon } from '../../assets/svg/booking/time.svg';
 import { ReactComponent as NameIcon } from '../../assets/svg/booking/name.svg';
 import { ReactComponent as EmailIcon } from '../../assets/svg/booking/email.svg';
 import { ReactComponent as TelIcon } from '../../assets/svg/booking/tel.svg';
 import { ReactComponent as ListIcon } from '../../assets/svg/booking/list.svg';
-import InputField from '../UI/InputField';
-import useFormState from '../../hooks/useFormState';
 
-import { getYesterday } from '../../utils';
+import { ReactComponent as DateIcon } from '../../assets/svg/booking/date.svg';
+import { ReactComponent as ArrowIcon } from '../../assets/svg/booking/arrow.svg';
+import { getToday } from '../../utils';
+
+import InputField from '../UI/InputField';
+import DateField from '../UI/DateField';
+
 import './styles.scss';
 
 const BookingForm = () => {
-  // const { name, setInputValue } = useFormState();
   return (
     <form className='booking-form'>
-      <label className='booking-form__field-form'>
+      <DateField
+        className='booking-form__field-form'
+        type='date'
+        name='date'
+        placeholder='date'
+        min={getToday()}
+      >
         <DateIcon />
-        <input type='date' min={getYesterday(Date.now())} />
-      </label>
-      <div className='booking-form__field-form'>
+        <ArrowIcon />
+      </DateField>
+
+      <DateField
+        className='booking-form__field-form'
+        type='time'
+        name='time'
+        placeholder='time'
+      >
         <TimeIcon />
-        <input type='time' />
-      </div>
+        <ArrowIcon />
+      </DateField>
 
       <InputField
         className='booking-form__field-form'

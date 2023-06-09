@@ -23,8 +23,8 @@ export const debounce = (fn: () => void, delay: number) => {
   };
 };
 
-export const getYesterday = (date: number | string) => {
-  const today = new Date(date).toLocaleDateString('ja-JP', {
+export const getToday = () => {
+  const today = new Date().toLocaleDateString('ja-JP', {
     year: 'numeric',
     month: '2-digit',
     day: '2-digit',
