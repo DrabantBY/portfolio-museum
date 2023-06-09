@@ -3,13 +3,15 @@ import { ReactComponent as NameIcon } from '../../assets/svg/booking/name.svg';
 import { ReactComponent as EmailIcon } from '../../assets/svg/booking/email.svg';
 import { ReactComponent as TelIcon } from '../../assets/svg/booking/tel.svg';
 import { ReactComponent as ListIcon } from '../../assets/svg/booking/list.svg';
-
 import { ReactComponent as DateIcon } from '../../assets/svg/booking/date.svg';
 import { ReactComponent as ArrowIcon } from '../../assets/svg/booking/arrow.svg';
+
 import { getToday } from '../../utils';
 
 import InputField from '../UI/InputField';
 import DateField from '../UI/DateField';
+import SelectField from '../UI/SelectField';
+import { TIME, TICKETS } from '../../constants';
 
 import './styles.scss';
 
@@ -27,15 +29,15 @@ const BookingForm = () => {
         <ArrowIcon />
       </DateField>
 
-      <DateField
+      <SelectField
         className='booking-form__field-form'
-        type='time'
         name='time'
-        placeholder='time'
+        options={TIME}
+        defaultLabel='time'
       >
         <TimeIcon />
         <ArrowIcon />
-      </DateField>
+      </SelectField>
 
       <InputField
         className='booking-form__field-form'
@@ -64,15 +66,15 @@ const BookingForm = () => {
         <TelIcon />
       </InputField>
 
-      <div className='booking-form__field-form'>
+      <SelectField
+        className='booking-form__field-form'
+        name='price'
+        options={TICKETS}
+        defaultLabel='ticket type'
+      >
         <ListIcon />
-        <select name=''>
-          <option value='0'>ticket type</option>
-          <option value='20'>permanent exhibition</option>
-          <option value='30'>temporary exhibition</option>
-          <option value='40'>combined admission</option>
-        </select>
-      </div>
+        <ArrowIcon />
+      </SelectField>
     </form>
   );
 };

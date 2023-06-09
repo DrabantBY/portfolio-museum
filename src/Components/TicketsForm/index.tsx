@@ -2,6 +2,7 @@ import { Link } from 'react-router-dom';
 import NumberField from '../UI/NumberField';
 import RadioField from '../UI/RadioField';
 import useFormState from '../../hooks/useFormState';
+import { TICKETS } from '../../constants';
 import './styles.scss';
 
 const TicketsForm = () => {
@@ -14,32 +15,16 @@ const TicketsForm = () => {
           ticket&nbsp;type
         </h3>
 
-        <RadioField
-          className='form-radio-field section-tickets__form-radio-field'
-          label='permanent exhibition'
-          name='price'
-          constValue='20'
-          handleChange={setPrice}
-          isChecked={20 === state.price}
-        />
-
-        <RadioField
-          className='form-radio-field section-tickets__form-radio-field'
-          label='temporary exhibition'
-          name='price'
-          constValue='30'
-          handleChange={setPrice}
-          isChecked={30 === state.price}
-        />
-
-        <RadioField
-          className='form-radio-field section-tickets__form-radio-field'
-          label='combined admission'
-          name='price'
-          constValue='40'
-          handleChange={setPrice}
-          isChecked={40 === state.price}
-        />
+        {TICKETS.map(({ value, label }) => (
+          <RadioField
+            className='form-radio-field section-tickets__form-radio-field'
+            label={label}
+            name='price'
+            constValue={value}
+            handleChange={setPrice}
+            isChecked={value === state.price}
+          />
+        ))}
       </div>
 
       <div className='form-amount section-tickets__form-amount '>

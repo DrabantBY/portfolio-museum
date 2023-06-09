@@ -14,7 +14,7 @@ export type FieldRadioProps = {
   className: string;
   label: string;
   name: string;
-  constValue: string;
+  constValue: string | number;
   handleChange: React.ChangeEventHandler<HTMLInputElement>;
   isChecked: boolean;
 };
@@ -28,6 +28,10 @@ export type FieldValueType = {
   value: string;
   error: boolean;
 };
+export type FieldLabelType = {
+  value: string | number;
+  label: string;
+};
 
 export type FieldNamesType = 'name' | 'phone' | 'email' | 'date' | 'time';
 
@@ -39,6 +43,14 @@ export type FieldInputProps = {
   placeholder: string;
   min?: string;
   max?: string;
+};
+
+export type FieldSelectProps = {
+  children: ReactNode;
+  className: string;
+  name: 'time' | 'price';
+  options: FieldLabelType[];
+  defaultLabel: string;
 };
 
 export type FormInitStateType = {
