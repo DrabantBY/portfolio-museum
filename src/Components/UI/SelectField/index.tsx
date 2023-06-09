@@ -13,17 +13,12 @@ const SelectField: React.FC<FieldSelectProps> = ({
   options,
   defaultLabel,
 }) => {
-  const { state, setPrice, setInputValue } = useFormState();
+  const { state, setInputValue } = useFormState();
   const [isFocus, setIsFocus] = useState(false);
   const classWrapper = classnames('form-select', className, { open: isFocus });
 
   const handleChange: React.ChangeEventHandler<HTMLInputElement> = (e) => {
-    if (name === 'price') {
-      setPrice(e);
-    } else {
-      setInputValue(e);
-    }
-
+    setInputValue(e);
     setIsFocus(false);
   };
 

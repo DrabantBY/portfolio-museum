@@ -15,6 +15,7 @@
     & + svg {
       left: auto;
       right: 1.5rem;
+      pointer-events: none;
     }
   }
 
@@ -32,6 +33,7 @@
     font-size: 1.8rem;
     line-height: 2.1rem;
     text-transform: capitalize;
+    cursor: pointer;
   }
 
   &-list {

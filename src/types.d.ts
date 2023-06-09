@@ -29,7 +29,7 @@ export type FieldValueType = {
   error: boolean;
 };
 export type FieldLabelType = {
-  value: string | number;
+  value: string;
   label: string;
 };
 
@@ -54,7 +54,7 @@ export type FieldSelectProps = {
 };
 
 export type FormInitStateType = {
-  price: number;
+  price: string;
   basic: number;
   senior: number;
   total: number;
@@ -68,7 +68,7 @@ export type FormInitStateType = {
 export type ActionType =
   | {
       type: 'price';
-      price: number;
+      price: string;
     }
   | {
       type: 'basic';

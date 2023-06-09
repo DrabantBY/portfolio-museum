@@ -2,7 +2,7 @@ import { useReducer, useEffect, useCallback } from 'react';
 import { FormInitStateType, ActionType } from '../types';
 
 const initialState: FormInitStateType = {
-  price: 0,
+  price: '',
   basic: 0,
   senior: 0,
   total: 0,
@@ -24,21 +24,27 @@ const reducer = (state: FormInitStateType, action: ActionType) => {
       return {
         ...state,
         price: action.price,
-        total: action.price * state.basic + (action.price * state.senior) / 2,
+        total:
+          Number(action.price) * state.basic +
+          (Number(action.price) * state.senior) / 2,
       };
 
     case 'basic':
       return {
         ...state,
         basic: action.basic,
-        total: state.price * action.basic + (state.price * state.senior) / 2,
+        total:
+          Number(state.price) * action.basic +
+          (Number(state.price) * state.senior) / 2,
       };
 
     case 'senior':
       return {
         ...state,
         senior: action.senior,
-        total: state.price * state.basic + (state.price * action.senior) / 2,
+        total:
+          Number(state.price) * state.basic +
+          (Number(state.price) * action.senior) / 2,
       };
 
     case 'name':
@@ -94,16 +100,6 @@ const useFormState = () => {
     localStorage.setItem('formState', JSON.stringify(state));
   }, [state]);
 
-  const setPrice: React.ChangeEventHandler<HTMLInputElement> = useCallback(
-    (e) => {
-      dispatch({
-        type: 'price',
-        price: Number(e.target.value),
-      });
-    },
-    []
-  );
-
   const setAmount = useCallback((name: string, value: number, step: 1 | -1) => {
     return dispatch({
       type: name,
@@ -121,7 +117,7 @@ const useFormState = () => {
     []
   );
 
-  return { state, setPrice, setAmount, setInputValue };
+  return { state, setAmount, setInputValue };
 };
 
 export default useFormState;

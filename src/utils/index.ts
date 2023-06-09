@@ -34,5 +34,5 @@ export const getToday = () => {
   return today.replace(/\//g, '-');
 };
 
-export const getLabel = (value: number | string, data: FieldLabelType[]) =>
+export const getLabel = (value: string, data: FieldLabelType[]) =>
   data.find((el) => el.value === value)?.label;

@@ -6,7 +6,7 @@ import { TICKETS } from '../../constants';
 import './styles.scss';
 
 const TicketsForm = () => {
-  const { state, setPrice, setAmount } = useFormState();
+  const { state, setInputValue, setAmount } = useFormState();
 
   return (
     <form className='section-tickets__form'>
@@ -21,7 +21,7 @@ const TicketsForm = () => {
             label={label}
             name='price'
             constValue={value}
-            handleChange={setPrice}
+            handleChange={setInputValue}
             isChecked={value === state.price}
           />
         ))}

@@ -83,7 +83,7 @@ export const TIME = [
 ];
 
 export const TICKETS = [
-  { value: 20, label: 'permanent exhibition' },
-  { value: 30, label: 'temporary exhibition' },
-  { value: 40, label: 'combined admission' },
+  { value: '20', label: 'permanent exhibition' },
+  { value: '30', label: 'temporary exhibition' },
+  { value: '40', label: 'combined admission' },
 ];
