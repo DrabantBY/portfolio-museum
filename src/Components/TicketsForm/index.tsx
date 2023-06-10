@@ -17,10 +17,11 @@ const TicketsForm = () => {
 
         {TICKETS.map(({ value, label }) => (
           <RadioField
+            key={value}
             className='form-radio-field section-tickets__form-radio-field'
             label={label}
             name='price'
-            constValue={value}
+            value={value}
             handleChange={setInputValue}
             isChecked={value === state.price}
           />

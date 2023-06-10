@@ -1,16 +1,17 @@
 import { memo } from 'react';
-import { FieldRadioProps } from '../../../types';
+import { FieldRadioPropsType } from '../../../types';
 import './styles.scss';
 
-const RadioField: React.FC<FieldRadioProps> = memo(
-  ({ className, label, name, constValue, handleChange, isChecked }) => {
+const RadioField: React.FC<FieldRadioPropsType> = memo(
+  ({ className, label, name, value, handleChange, isChecked }) => {
+    console.log(name, 'radio', value);
     return (
       <label className={className}>
         <input
           type='radio'
           name={name}
           onChange={handleChange}
-          value={constValue}
+          value={value}
           checked={isChecked}
         />
         {label}

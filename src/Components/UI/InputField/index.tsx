@@ -1,35 +1,37 @@
-import useFormState from '../../../hooks/useFormState';
+import { memo } from 'react';
 import classnames from 'classnames';
-import { FieldInputProps } from '../../../types';
+import { FieldInputPropsType } from '../../../types';
 import './styles.scss';
 
-const InputField: React.FC<FieldInputProps> = ({
-  children,
-  className,
-  type,
-  name,
-  placeholder,
-}) => {
-  const { state, setInputValue } = useFormState();
-  const classLabel = classnames('field-form', className, {
-    error: state[name as 'name' | 'phone' | 'email'].error,
-  });
-
-  return (
-    <label className={classLabel}>
-      {children}
-      <input
-        type={type}
-        name={name}
-        placeholder={placeholder}
-        value={state[name as 'name' | 'phone' | 'email'].value}
-        onChange={setInputValue}
-      />
-      {state[name as 'name' | 'phone' | 'email'].error && (
-        <span>* invalid {name}</span>
-      )}
-    </label>
-  );
-};
+const InputField: React.FC<FieldInputPropsType> = memo(
+  ({
+    children,
+    className,
+    type,
+    name,
+    placeholder,
+    value,
+    handleChange,
+    isError,
+  }) => {
+    const classLabel = classnames('field-form', className, {
+      error: isError,
+    });
+    console.log(name, value);
+    return (
+      <label className={classLabel}>
+        {children}
+        <input
+          type={type}
+          name={name}
+          placeholder={placeholder}
+          value={value}
+          onChange={handleChange}
+        />
+        {isError && <span>* invalid {name}</span>}
+      </label>
+    );
+  }
+);
 
 export default InputField;

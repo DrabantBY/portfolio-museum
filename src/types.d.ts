@@ -10,48 +10,40 @@ export type MenuPropsType = {
   isBurger?: boolean;
 } & Partial<Pick<MenuBurgerType, 'isActive' | 'setIsActive'>>;
 
-export type FieldRadioProps = {
-  className: string;
-  label: string;
-  name: string;
-  constValue: string | number;
-  handleChange: React.ChangeEventHandler<HTMLInputElement>;
-  isChecked: boolean;
-};
-
-export type FieldNumberProps = {
-  value: number;
-  handleClick: (name: string, value: number, step: 1 | -1) => void;
-} & Omit<FormFieldRadioProps, 'constValue' | 'isChecked' | 'handleChange'>;
-
 export type FieldValueType = {
   value: string;
   error: boolean;
 };
+
 export type FieldLabelType = {
   value: string;
   label: string;
 };
 
-export type FieldNamesType = 'name' | 'phone' | 'email' | 'date' | 'time';
-
-export type FieldInputProps = {
+export type FieldInputPropsType = {
   children: ReactNode;
   className: string;
   type: string;
-  name: FieldNamesType;
+  name: string;
   placeholder: string;
-  min?: string;
-  max?: string;
+  value: string | number;
+  handleChange: React.ChangeEventHandler<HTMLInputElement>;
+  isError?: boolean;
 };
 
-export type FieldSelectProps = {
-  children: ReactNode;
-  className: string;
-  name: 'time' | 'price';
+export type FieldRadioPropsType = {
+  isChecked: boolean;
+} & Omit<FormFieldInputPropsType, 'type' | 'children' | 'placeholder'>;
+
+export type FieldNumberPropsType = {
+  handleClick: (name: string, value: number, step: 1 | -1) => void;
+} & Omit<FieldRadioPropsType, 'handleChange'>;
+
+export type FieldSelectPropsType = {
   options: FieldLabelType[];
-  defaultLabel: string;
-};
+} & Omit<FormFieldInputPropsType, 'type'>;
+
+/*********************************************************************/
 
 export type FormInitStateType = {
   price: string;

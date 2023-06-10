@@ -1,9 +1,10 @@
 import { memo } from 'react';
-import { FieldNumberProps } from '../../../types';
+import { FieldNumberPropsType } from '../../../types';
 import './styles.scss';
 
-const NumberField: React.FC<FieldNumberProps> = memo(
+const NumberField: React.FC<FieldNumberPropsType> = memo(
   ({ className, label, name, value, handleClick }) => {
+    console.log(name, value);
     return (
       <div className={className}>
         <label htmlFor={name}>{label}</label>
