@@ -1,5 +1,3 @@
-import { ReactNode } from 'react';
-
 export type MenuBurgerType = {
   isActive: boolean;
   setIsActive: React.Dispatch<React.SetStateAction<boolean>>;
@@ -21,7 +19,8 @@ export type FieldLabelType = {
 };
 
 export type FieldInputPropsType = {
-  children: ReactNode;
+  label?: string;
+  icons: JSX.Element[];
   className: string;
   type: string;
   name: string;
@@ -33,7 +32,7 @@ export type FieldInputPropsType = {
 
 export type FieldRadioPropsType = {
   isChecked: boolean;
-} & Omit<FormFieldInputPropsType, 'type' | 'children' | 'placeholder'>;
+} & Omit<FieldInputPropsType, 'type' | 'children' | 'placeholder' | 'icons'>;
 
 export type FieldNumberPropsType = {
   handleClick: (name: string, value: number, step: 1 | -1) => void;
@@ -41,7 +40,7 @@ export type FieldNumberPropsType = {
 
 export type FieldSelectPropsType = {
   options: FieldLabelType[];
-} & Omit<FormFieldInputPropsType, 'type'>;
+} & Omit<FieldInputPropsType, 'type'>;
 
 /*********************************************************************/
 

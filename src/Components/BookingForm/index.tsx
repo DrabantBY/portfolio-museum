@@ -1,4 +1,9 @@
 import useFormState from '../../hooks/useFormState';
+import InputField from '../UI/InputField';
+import DateField from '../UI/DateField';
+import SelectField from '../UI/SelectField';
+import { useMemo } from 'react';
+import { TIME, TICKETS } from '../../constants';
 import { ReactComponent as TimeIcon } from '../../assets/svg/booking/time.svg';
 import { ReactComponent as NameIcon } from '../../assets/svg/booking/name.svg';
 import { ReactComponent as EmailIcon } from '../../assets/svg/booking/email.svg';
@@ -6,16 +11,17 @@ import { ReactComponent as TelIcon } from '../../assets/svg/booking/tel.svg';
 import { ReactComponent as ListIcon } from '../../assets/svg/booking/list.svg';
 import { ReactComponent as DateIcon } from '../../assets/svg/booking/date.svg';
 import { ReactComponent as ArrowIcon } from '../../assets/svg/booking/arrow.svg';
-
-import InputField from '../UI/InputField';
-import DateField from '../UI/DateField';
-import SelectField from '../UI/SelectField';
-import { TIME, TICKETS } from '../../constants';
-
 import './styles.scss';
 
 const BookingForm = () => {
   const { state, setAmount, setInputValue } = useFormState();
+
+  const memoNameIcon = useMemo(() => [<NameIcon />], []);
+  const memoTelIcon = useMemo(() => [<TelIcon />], []);
+  const memoEmailIcon = useMemo(() => [<EmailIcon />], []);
+  const memoDateIcons = useMemo(() => [<DateIcon />, <ArrowIcon />], []);
+  const memoTimeIcons = useMemo(() => [<TimeIcon />, <ArrowIcon />], []);
+  const memoListIcons = useMemo(() => [<ListIcon />, <ArrowIcon />], []);
 
   return (
     <form className='booking-form'>
@@ -26,10 +32,8 @@ const BookingForm = () => {
         placeholder='date'
         value={state.date}
         handleChange={setInputValue}
-      >
-        <DateIcon />
-        <ArrowIcon />
-      </DateField>
+        icons={memoDateIcons}
+      />
 
       <SelectField
         className='booking-form__field-form'
@@ -38,10 +42,8 @@ const BookingForm = () => {
         placeholder='time'
         value={state.time}
         handleChange={setInputValue}
-      >
-        <TimeIcon />
-        <ArrowIcon />
-      </SelectField>
+        icons={memoTimeIcons}
+      />
 
       <InputField
         className='booking-form__field-form'
@@ -51,9 +53,8 @@ const BookingForm = () => {
         value={state.name.value}
         handleChange={setInputValue}
         isError={state.name.error}
-      >
-        <NameIcon />
-      </InputField>
+        icons={memoNameIcon}
+      />
 
       <InputField
         className='booking-form__field-form'
@@ -63,9 +64,8 @@ const BookingForm = () => {
         value={state.email.value}
         handleChange={setInputValue}
         isError={state.email.error}
-      >
-        <EmailIcon />
-      </InputField>
+        icons={memoEmailIcon}
+      />
 
       <InputField
         className='booking-form__field-form'
@@ -75,9 +75,8 @@ const BookingForm = () => {
         value={state.phone.value}
         handleChange={setInputValue}
         isError={state.phone.error}
-      >
-        <TelIcon />
-      </InputField>
+        icons={memoTelIcon}
+      />
 
       <SelectField
         className='booking-form__field-form'
@@ -86,10 +85,8 @@ const BookingForm = () => {
         placeholder='ticket type'
         value={state.price}
         handleChange={setInputValue}
-      >
-        <ListIcon />
-        <ArrowIcon />
-      </SelectField>
+        icons={memoListIcons}
+      />
     </form>
   );
 };

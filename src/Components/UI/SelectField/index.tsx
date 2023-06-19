@@ -1,4 +1,4 @@
-import { useState, memo, useCallback } from 'react';
+import { memo, useState, useCallback } from 'react';
 import classnames from 'classnames';
 import RadioField from '../RadioField';
 import { FieldSelectPropsType } from '../../../types';
@@ -6,15 +6,7 @@ import { getLabel } from '../../../utils';
 import './styles.scss';
 
 const SelectField: React.FC<FieldSelectPropsType> = memo(
-  ({
-    children,
-    className,
-    name,
-    value,
-    handleChange,
-    options,
-    placeholder,
-  }) => {
+  ({ icons, className, name, value, handleChange, options, placeholder }) => {
     const [isFocus, setIsFocus] = useState(false);
     const classWrapper = classnames('form-select', className, {
       open: isFocus,
@@ -33,9 +25,9 @@ const SelectField: React.FC<FieldSelectPropsType> = memo(
 
     return (
       <div className={classWrapper}>
-        {children}
+        {...icons}
         <div className='form-select-value' onClick={() => setIsFocus(!isFocus)}>
-          {value ? getLabel(value, options) : placeholder}
+          {value ? getLabel(value.toString(), options) : placeholder}
         </div>
 
         {isFocus && (

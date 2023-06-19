@@ -5,7 +5,7 @@ import './styles.scss';
 
 const InputField: React.FC<FieldInputPropsType> = memo(
   ({
-    children,
+    icons,
     className,
     type,
     name,
@@ -20,7 +20,7 @@ const InputField: React.FC<FieldInputPropsType> = memo(
     console.log(name, value);
     return (
       <label className={classLabel}>
-        {children}
+        {...icons}
         <input
           type={type}
           name={name}

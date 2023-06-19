@@ -12,7 +12,7 @@ const NumberField: React.FC<FieldNumberPropsType> = memo(
           <button
             type='button'
             disabled={value === 0}
-            onClick={() => handleClick(name, value, -1)}
+            onClick={() => handleClick(name, Number(value), -1)}
           >
             –
           </button>
@@ -27,7 +27,7 @@ const NumberField: React.FC<FieldNumberPropsType> = memo(
           <button
             type='button'
             disabled={value === 10}
-            onClick={() => handleClick(name, value, 1)}
+            onClick={() => handleClick(name, Number(value), 1)}
           >
             +
           </button>

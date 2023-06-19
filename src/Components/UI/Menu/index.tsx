@@ -1,6 +1,6 @@
+import classnames from 'classnames';
 import { memo } from 'react';
 import { Link } from 'react-scroll';
-import classnames from 'classnames';
 import { MENU } from '../../../constants';
 import { ReactComponent as ArrowLinkIcon } from '../../../assets/svg/arrow-link.svg';
 import { MenuPropsType } from '../../../types';

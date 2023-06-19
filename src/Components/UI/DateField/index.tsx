@@ -5,7 +5,7 @@ import { getToday } from '../../../utils';
 import './styles.scss';
 
 const DateField: React.FC<FieldInputPropsType> = memo(
-  ({ children, className, type, name, placeholder, value, handleChange }) => {
+  ({ icons, className, type, name, placeholder, value, handleChange }) => {
     const [isOpen, setIsOpen] = useState(false);
     const classInput = classnames({ active: value });
     const classLabel = classnames('field-form-arrow', className, {
@@ -21,7 +21,7 @@ const DateField: React.FC<FieldInputPropsType> = memo(
 
     return (
       <label className={classLabel}>
-        {children}
+        {...icons}
         <input
           className={classInput}
           type={type}
