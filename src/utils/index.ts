@@ -16,14 +16,6 @@ export const shuffleGallery = () => {
   return GALLERY;
 };
 
-export const debounce = (fn: () => void, delay: number) => {
-  let timeout: ReturnType<typeof setTimeout>;
-  return () => {
-    clearTimeout(timeout);
-    timeout = setTimeout(fn, delay);
-  };
-};
-
 export const getToday = () => {
   const today = new Date().toLocaleDateString('ja-JP', {
     year: 'numeric',

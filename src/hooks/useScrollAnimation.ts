@@ -1,12 +1,12 @@
 import { useState, useEffect, useRef } from 'react';
-import { debounce } from '../utils';
+import throttle from 'lodash.throttle';
 
 const useScrollAnimation = () => {
   const imageRef = useRef<HTMLImageElement>(null);
   const [visible, setVisible] = useState(false);
 
   useEffect(() => {
-    const onScrollHandler = debounce(() => {
+    const onScrollHandler = throttle(() => {
       if (imageRef.current) {
         const { height, top } = imageRef.current.getBoundingClientRect();
 
@@ -16,7 +16,7 @@ const useScrollAnimation = () => {
           setVisible(false);
         }
       }
-    }, 50);
+    }, 300);
 
     window.addEventListener('scroll', onScrollHandler);
 
