@@ -1,4 +1,4 @@
-import { useState, memo } from 'react';
+import { useEffect, useRef, memo } from 'react';
 import classnames from 'classnames';
 import { FieldInputPropsType } from '../../../types';
 import { getToday } from '../../../utils';
@@ -6,18 +6,18 @@ import './styles.scss';
 
 const DateField: React.FC<FieldInputPropsType> = memo(
   ({ icons, className, type, name, placeholder, value, handleChange }) => {
-    const [isOpen, setIsOpen] = useState(false);
     const classInput = classnames({ active: value });
-    const classLabel = classnames('field-form-arrow', className, {
-      open: isOpen,
-    });
+    const classLabel = classnames('field-form-arrow', className);
+
+    const inputRef = useRef<HTMLInputElement>(null);
+
+    useEffect(() => {
+      if (inputRef.current) {
+        inputRef.current.blur();
+      }
+    }, [value]);
 
     console.log(name, value);
-
-    const handleOnChange: React.ChangeEventHandler<HTMLInputElement> = (e) => {
-      handleChange(e);
-      setTimeout(() => e.target.blur(), 0);
-    };
 
     return (
       <label className={classLabel}>
@@ -28,10 +28,9 @@ const DateField: React.FC<FieldInputPropsType> = memo(
           name={name}
           placeholder={placeholder}
           min={getToday()}
-          onChange={handleOnChange}
+          onChange={handleChange}
           value={value}
-          onFocus={() => setIsOpen(true)}
-          onBlur={() => setIsOpen(false)}
+          ref={inputRef}
         />
       </label>
     );
