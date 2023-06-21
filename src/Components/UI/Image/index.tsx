@@ -1,15 +1,15 @@
-import useScrollAnimation from '../../../hooks/useScrollAnimation';
+import useIntersection from '../../../hooks/useIntersection';
 import classnames from 'classnames';
 import './styles.scss';
 
 const Image: React.FC<{ item: string }> = ({ item }) => {
-  const { visible, imageRef } = useScrollAnimation();
+  const { imageRef, isIntersection } = useIntersection();
 
   const classLi = classnames('gallery-item', 'section-gallery__gallery-item');
   const classImg = classnames(
     'gallery-image',
     'section-gallery__gallery-image',
-    { active: visible }
+    { active: isIntersection }
   );
 
   return (
