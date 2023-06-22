@@ -36,7 +36,7 @@ export type FieldRadioPropsType = {
 
 export type FieldNumberPropsType = {
   handleClick: (name: string, value: number, step: 1 | -1) => void;
-} & Omit<FieldRadioPropsType, 'handleChange'>;
+} & Omit<FieldRadioPropsType, 'handleChange' | 'isChecked'>;
 
 export type FieldSelectPropsType = {
   options: FieldLabelType[];

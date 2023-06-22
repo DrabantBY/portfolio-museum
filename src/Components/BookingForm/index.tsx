@@ -2,6 +2,7 @@ import useFormState from '../../hooks/useFormState';
 import InputField from '../UI/InputField';
 import DateField from '../UI/DateField';
 import SelectField from '../UI/SelectField';
+import NumberField from '../UI/NumberField';
 import { useMemo } from 'react';
 import { TIME, TICKETS } from '../../constants';
 import { ReactComponent as TimeIcon } from '../../assets/svg/booking/time.svg';
@@ -87,6 +88,23 @@ const BookingForm = () => {
         handleChange={setInputValue}
         icons={memoListIcons}
       />
+
+      <div className='booking-form__section'>
+        <NumberField
+          className='booking-form__number-field '
+          label={`basic 18+ (${state.price} €)`}
+          name='basic'
+          value={state.basic}
+          handleClick={setAmount}
+        />
+        <NumberField
+          className='booking-form__number-field '
+          label={`senior 65+ (${Number(state.price) / 2} €)`}
+          name='senior'
+          value={state.senior}
+          handleClick={setAmount}
+        />
+      </div>
     </form>
   );
 };
